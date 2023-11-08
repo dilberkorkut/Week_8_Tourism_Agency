@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="aeabb31b-0621-4f0b-bbf4-c21d47c8dd7a" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/com/tourismagency/Helper/Config.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/tourismagency/Helper/DBConnector.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/tourismagency/Helper/Helper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/tourismagency/Model/Admin.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/tourismagency/Model/Agency.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/tourismagency/Model/Hotel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/tourismagency/Model/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/tourismagency/View/AdminGUI.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/tourismagency/View/AdminGUI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/tourismagency/View/AgencyGUI.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/tourismagency/View/AgencyGUI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/tourismagency/View/LoginGUI.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/tourismagency/View/LoginGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week_7/PatikaKlonu/src/com/patikadev/Model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Week_7/PatikaKlonu/src/com/patikadev/Model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Week_7/PatikaKlonu/src/com/patikadev/View/OperatorGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Week_7/PatikaKlonu/src/com/patikadev/View/OperatorGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TravelAgency/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TravelAgency/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TravelAgency/src/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TravelAgency/src/com/patikadev/Model/Admin.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TravelAgency/src/com/patikadev/Model/Employee.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TravelAgency/src/com/patikadev/Model/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TravelAgency/src/com/patikadev/View/AdminGUI.form" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TravelAgency/src/com/patikadev/View/AdminGUI.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TravelAgency/src/com/patikadev/View/EmployeeGUI.form" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TravelAgency/src/com/patikadev/View/EmployeeGUI.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TravelAgency/src/com/patikadev/View/LoginGUI.form" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../TravelAgency/src/com/patikadev/View/LoginGUI.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 1
+}</component>
+  <component name="ProjectId" id="2XXqNhyBAEKpZuFeccWXLltvkKt" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH": "114",
+    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "283",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "/Users/dilberbilgin/IdeaProjects/PatikaPlus_FullStack/Week_8/TourismAgency",
+    "onboarding.tips.debug.path": "/Users/dilberbilgin/IdeaProjects/PatikaPlus_FullStack/Week_8/TravelAgency/src/Main.java",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.com.tourismagency.View.LoginGUI">
+    <configuration name="LoginGUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.patikadev.LoginGUI" />
+      <module name="TourismAgency" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.tourismagency.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="com.tourismagency.View.LoginGUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.tourismagency.View.LoginGUI" />
+      <module name="TourismAgency" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.tourismagency.View.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.com.tourismagency.View.LoginGUI" />
+        <item itemvalue="Application.LoginGUI" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="aeabb31b-0621-4f0b-bbf4-c21d47c8dd7a" name="Changes" comment="" />
+      <created>1698785736092</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1698785736092</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Main.java</url>
+          <line>13</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
