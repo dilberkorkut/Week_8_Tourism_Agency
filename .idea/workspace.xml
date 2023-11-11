@@ -5,33 +5,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aeabb31b-0621-4f0b-bbf4-c21d47c8dd7a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/tourismagency/Helper/Config.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/tourismagency/Helper/DBConnector.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/tourismagency/Helper/Helper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/tourismagency/Model/Admin.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/tourismagency/Model/Agency.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/tourismagency/Model/Hotel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/tourismagency/Model/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/tourismagency/View/AdminGUI.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/tourismagency/View/AdminGUI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/tourismagency/View/AgencyGUI.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/tourismagency/View/AgencyGUI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/tourismagency/View/LoginGUI.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/tourismagency/View/LoginGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Week_7/PatikaKlonu/src/com/patikadev/Model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Week_7/PatikaKlonu/src/com/patikadev/Model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Week_7/PatikaKlonu/src/com/patikadev/View/OperatorGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Week_7/PatikaKlonu/src/com/patikadev/View/OperatorGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TravelAgency/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TravelAgency/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TravelAgency/src/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TravelAgency/src/com/patikadev/Model/Admin.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TravelAgency/src/com/patikadev/Model/Employee.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TravelAgency/src/com/patikadev/Model/User.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TravelAgency/src/com/patikadev/View/AdminGUI.form" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TravelAgency/src/com/patikadev/View/AdminGUI.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TravelAgency/src/com/patikadev/View/EmployeeGUI.form" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TravelAgency/src/com/patikadev/View/EmployeeGUI.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TravelAgency/src/com/patikadev/View/LoginGUI.form" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../TravelAgency/src/com/patikadev/View/LoginGUI.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/tourismagency/Model/Hostel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/tourismagency/Model/Hostel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/tourismagency/Model/Hotel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/tourismagency/Model/Hotel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/tourismagency/Model/HotelSeason.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/tourismagency/Model/HotelSeason.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/tourismagency/Model/Price.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/tourismagency/Model/Price.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/tourismagency/Model/Reservation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/tourismagency/Model/Reservation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/tourismagency/Model/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/tourismagency/Model/Room.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/tourismagency/Model/SearchRoomResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/tourismagency/Model/SearchRoomResult.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/tourismagency/Model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/tourismagency/Model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/tourismagency/View/AdminGUI.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/tourismagency/View/AdminGUI.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/tourismagency/View/AdminGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/tourismagency/View/AdminGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/tourismagency/View/AgencyGUI.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/tourismagency/View/AgencyGUI.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/tourismagency/View/AgencyGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/tourismagency/View/AgencyGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/tourismagency/View/FeaturesGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/tourismagency/View/FeaturesGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/tourismagency/View/LoginGUI.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/tourismagency/View/LoginGUI.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/tourismagency/View/LoginGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/tourismagency/View/LoginGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/tourismagency/View/ReservationGUI.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/tourismagency/View/ReservationGUI.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/tourismagency/View/ReservationGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/tourismagency/View/ReservationGUI.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,7 +39,10 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
@@ -61,10 +57,10 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH": "114",
-    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "283",
+    "UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH": "181",
+    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "269",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "/Users/dilberbilgin/IdeaProjects/PatikaPlus_FullStack/Week_8/TourismAgency",
+    "last_opened_file_path": "/Users/dilberbilgin/IdeaProjects/Week_8_Tourism_Agency",
     "onboarding.tips.debug.path": "/Users/dilberbilgin/IdeaProjects/PatikaPlus_FullStack/Week_8/TravelAgency/src/Main.java",
     "project.structure.last.edited": "Libraries",
     "project.structure.proportion": "0.15",
@@ -74,6 +70,8 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src" />
+      <recent name="$PROJECT_DIR$/src/com/tourismagency" />
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>

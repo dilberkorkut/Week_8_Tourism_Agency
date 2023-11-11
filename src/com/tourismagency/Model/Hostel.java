@@ -63,7 +63,6 @@ public class Hostel {
         ArrayList<Hostel> hostelList = new ArrayList<>();
         String query = "SELECT * FROM hostel_types";
         Hostel obj;
-
         try {
             Statement st = DBConnector.getInstance().createStatement();
             ResultSet rs = st.executeQuery(query);
@@ -72,14 +71,10 @@ public class Hostel {
                 obj.setId(rs.getInt("id"));
                 obj.setHotel_id(rs.getInt("hotel_id"));
                 obj.setHostelType(rs.getString("hostel_types"));
-              //  obj.setHotel(Hotel.getFetch(obj.getHotel_id()));
-
-
                 hostelList.add(obj);
             }
             st.close();
             rs.close();
-
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -88,14 +83,11 @@ public class Hostel {
 
     public static boolean add(int hotel_id, String hostelType) {
         String query = "INSERT INTO hostel_types (hotel_id,hostel_types) VALUES (?,?)";
-
         try {
-            PreparedStatement pr = DBConnector.getInstance().prepareStatement(query);
+            PreparedStatement pr = DBConnector.getInstance().prepareStatement(query); //disardan degisken aldigimiz icin prepared statement
             pr.setInt(1, hotel_id);
             pr.setString(2, hostelType);
-
             return pr.executeUpdate() != -1;
-
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -105,7 +97,6 @@ public class Hostel {
     public static Hostel getFetch(int id){
         Hostel obj = null;
         String query = "SELECT * FROM hostels WHERE id = ?";
-
         try {
             PreparedStatement pr = DBConnector.getInstance().prepareStatement(query);
             pr.setInt(1, id);
@@ -115,12 +106,10 @@ public class Hostel {
                 obj.setId(rs.getInt("id"));
                 obj.setHotel_id(rs.getInt("hotel_id"));
                 obj.setHostelType(rs.getString("hostel_types"));
-
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
         return obj;
     }
-
 }

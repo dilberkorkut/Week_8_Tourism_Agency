@@ -120,6 +120,34 @@ public class Hotel {
     }
 
 
+    public static Hotel getFetch(int id){ // bu metod belirli bir Id'ye sahip olan oteli getirmek icin kullanilir.
+        Hotel obj = null;
+        String query = "SELECT * FROM hotels WHERE id = ?";
+        try {
+            PreparedStatement pr = DBConnector.getInstance().prepareStatement(query);
+            pr.setInt(1, id);
+            ResultSet rs = pr.executeQuery();
+            while (rs.next()){
+                obj = new Hotel();
+                obj.setId(rs.getInt("id"));
+                obj.setName(rs.getString("name"));
+                obj.setCity(rs.getString("city"));
+                obj.setRegion(rs.getString("region"));
+                obj.setAddress(rs.getString("address"));
+                obj.setEmail(rs.getString("email"));
+                obj.setPhone(rs.getString("phone"));
+                obj.setStarRate(rs.getString("star_rate"));
+                obj.setFacilityFeatures(rs.getString("facility_features"));
+                obj.sethostelType(rs.getString("hostel_types"));
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return obj;
+    }
+
+
+
     public static ArrayList<Hotel> getList() {
         ArrayList<Hotel> hotelList = new ArrayList<>();
         String query = "SELECT * FROM hotels ";
@@ -218,7 +246,7 @@ public class Hotel {
                 obj.setPhone(rs.getString("phone"));
                 obj.setStarRate(rs.getString("star_rate"));
                 obj.setFacilityFeatures(rs.getString("facility_features"));
-                obj.sethostelType(rs.getString("hostel_type"));
+                obj.sethostelType(rs.getString("hostel_types"));
                 hotelList.add(obj);
             }
         } catch (SQLException throwables) {
@@ -271,29 +299,6 @@ public class Hotel {
         return true;
     }
 
-    public static Hotel getFetch(int id){
-        Hotel obj = null;
-        String query = "SELECT * FROM hotels WHERE id = ?";
-        try {
-            PreparedStatement pr = DBConnector.getInstance().prepareStatement(query);
-            pr.setInt(1, id);
-            ResultSet rs = pr.executeQuery();
-            while (rs.next()){
-                obj = new Hotel();
-                obj.setId(rs.getInt("id"));
-                obj.setName(rs.getString("name"));
-                obj.setCity(rs.getString("city"));
-                obj.setRegion(rs.getString("region"));
-                obj.setAddress(rs.getString("address"));
-                obj.setEmail(rs.getString("email"));
-                obj.setPhone(rs.getString("phone"));
-                obj.setStarRate(rs.getString("star_rate"));
-                obj.setFacilityFeatures(rs.getString("facility_features"));
-                obj.sethostelType(rs.getString("hostel_types"));
-            }
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-        return obj;
-    }
+
+
 }

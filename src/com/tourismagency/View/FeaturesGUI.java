@@ -63,12 +63,11 @@ public class FeaturesGUI extends JFrame{
 
             String features = "";
             String hostels = "";
-//            String startDate = fld_features_start_date.getText();
-//            String endDate = fld_features_end_date.getText();
 
-            for (JCheckBox i : feature) {
-                if (i.isSelected()) {
-                    features = features + i.getText() + " ";
+            // ArrayList icinde bulunan checkbox lari kontrol eder. features adli String degiskenione ekler.
+            for (JCheckBox i : feature) { // feature listesindeki her JCheckbox ogesi tek tek ele alinir.
+                if (i.isSelected()) {// her JCheckbox ogesi kontrol edilir. eger secili ise
+                    features = features + i.getText() + " "; //Secili olan JCheckBox ögesinin metin icerigi (i.getText()) alinarak "features" adli String degiskenine eklenir.
                 }
             }
 
@@ -79,12 +78,9 @@ public class FeaturesGUI extends JFrame{
                 }
             }
 
-            Hotel.update(features, hostels, hotel.getId());
-        //    HotelSeason.add(hotel.getId(), startDate, endDate);
-            dispose();
-
+            Hotel.update(features, hostels, hotel.getId()); // guncellenecek bilgiler : features, hostels, hotel.getId()
+            dispose(); // FeaturesGUI penceresini kapatir.
         });
     }
-
 
 }

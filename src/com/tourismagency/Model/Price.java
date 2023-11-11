@@ -11,16 +11,16 @@ import java.util.ArrayList;
 public class Price {
     private int id;
     private int hotel_id;
+    private int room_id;
     private int season_id;
-    private String startDate; // TODO: 6.11.2023  bu da ayni sekilde databasede var diye!
-    private String endDate; // TODO: 6.11.2023  bu da ayni sekilde databasede var diye!
+    private String startDate;
+    private String endDate;
     private String season;
     private int hostel_id;
-    private String hostelType; // TODO: 6.11.2023  database icinde olmasi istendigi icin ekledim. buraya yazmadan cekme yontemi?
-    private String roomType; // TODO: 6.11.2023  bu da ayni sekilde databasede var diye!
+    private String hostelType;
+    private String roomType;
     private String age;
     private String price;
-
 
     private Hotel hotel;
     private String hotelName;
@@ -28,15 +28,17 @@ public class Price {
     private HotelSeason hotelSeason;
     private Room room;
 
-    public Price(int id, int hotel_id, int season_id, int hostel_id, String age, String price) {
+    public Price(int id, int hotel_id, int room_id, int season_id, int hostel_id, String age, String price) {
         this.id = id;
         this.hotel_id = hotel_id;
+        this.room_id = room_id;
         this.season_id = season_id;
         this.season = HotelSeason.getFetch(season_id).getSeason();
         this.hostel_id = hostel_id;
         this.age = age;
         this.price = price;
 
+        this.room = Room.getFetch(room_id);
 
         this.hotel = Hotel.getFetch(hotel_id);
         this.hotelName = Hotel.getFetch(hotel_id).getName();
@@ -46,12 +48,13 @@ public class Price {
         this.startDate = HotelSeason.getFetch(season_id).getStartDate();
         this.endDate = HotelSeason.getFetch(season_id).getEndDate();
         this.hostelType = Hostel.getFetch(hostel_id).getHostelType();
-        this.roomType = Room.getFetch(room.getHotel_id()).getRoomType();
+        this.roomType = Room.getFetch(room_id).getRoomType();
     }
 
     public Price() {
 
     }
+
 
     public int getId() {
         return id;
@@ -67,6 +70,14 @@ public class Price {
 
     public void setHotel_id(int hotel_id) {
         this.hotel_id = hotel_id;
+    }
+
+    public int getRoom_id() {
+        return room_id;
+    }
+
+    public void setRoom_id(int room_id) {
+        this.room_id = room_id;
     }
 
     public String getSeason() {
@@ -185,7 +196,6 @@ public class Price {
         ArrayList<Price> priceList = new ArrayList<>();
         String query = "SELECT * FROM prices ";
         Price obj;
-//(int id, int hotel_id, int season_id, int hostel_id, String age, String price)
         try {
             Statement st = DBConnector.getInstance().createStatement();
             ResultSet rs = st.executeQuery(query);
@@ -193,6 +203,7 @@ public class Price {
                 obj = new Price();
                 obj.setId(rs.getInt("id"));
                 obj.setHotel_id(rs.getInt("hotel_id"));
+                obj.setRoom_id(rs.getInt("room_id"));
                 obj.setSeason_id(rs.getInt("season_id"));
                 obj.setStartDate(rs.getString("start_date"));
                 obj.setEndDate(rs.getString("end_date"));
@@ -216,7 +227,6 @@ public class Price {
         ArrayList<Price> priceList = new ArrayList<>();
         String query = "SELECT * FROM prices ";
         Price obj;
-
         try {
             Statement st = DBConnector.getInstance().createStatement();
             ResultSet rs = st.executeQuery(query);
@@ -224,6 +234,7 @@ public class Price {
                 obj = new Price();
                 obj.setId(rs.getInt("id"));
                 obj.setHotel_id(rs.getInt("hotel_id"));
+                obj.setRoom_id(rs.getInt("room_id"));
                 obj.setSeason_id(rs.getInt("season_id"));
                 obj.setStartDate(rs.getString("start_date"));
                 obj.setEndDate(rs.getString("end_date"));
@@ -243,21 +254,21 @@ public class Price {
         }
         return priceList;
     }
-
-    public static boolean add(int hotel_id, int season_id, String startDate, String endDate, String season, int hostel_id, String hostelType, String roomType, String age, String price) {
-        String query = "INSERT INTO prices (hotel_id, season_id, start_date, end_date, season, hostel_id, hostel_types, room_type, age, price) VALUES (?,?,?,?,?,?,?,?,?,?) ";
+    public static boolean add(int hotel_id, int season_id, int room_id, String startDate, String endDate, String season, int hostel_id, String hostelType, String roomType, String age, String price) {
+        String query = "INSERT INTO prices (hotel_id, season_id, room_id, start_date, end_date, season, hostel_id, hostel_types, room_type, age, price) VALUES (?,?,?,?,?,?,?,?,?,?,?) ";
         try {
             PreparedStatement pr = DBConnector.getInstance().prepareStatement(query);
             pr.setInt(1, hotel_id);
             pr.setInt(2, season_id);
-            pr.setString(3, startDate);
-            pr.setString(4, endDate);
-            pr.setString(5, season);
-            pr.setInt(6, hostel_id);
-            pr.setString(7, hostelType);
-            pr.setString(8, roomType);
-            pr.setString(9, age);
-            pr.setString(10, price);
+            pr.setInt(3, room_id);
+            pr.setString(4, startDate);
+            pr.setString(5, endDate);
+            pr.setString(6, season);
+            pr.setInt(7, hostel_id);
+            pr.setString(8, hostelType);
+            pr.setString(9, roomType);
+            pr.setString(10, age);
+            pr.setString(11, price);
             return pr.executeUpdate() != -1;
         } catch (SQLException e) {
             e.printStackTrace();
@@ -270,10 +281,6 @@ public class Price {
         try {
             PreparedStatement pr =DBConnector.getInstance().prepareStatement(query);
             pr.setInt(1 , id);
-            ArrayList<Price> priceList = Price.getList(id);
-            for (Price p : priceList) {
-                Price.delete(p.getId());
-            }
             return pr.executeUpdate() != -1;
         } catch (SQLException e) {
             System.out.println(e.getMessage());
@@ -281,51 +288,32 @@ public class Price {
         return true;
     }
 
-//    // TODO: 5.11.2023 update
-//    public static boolean update(int id, int hotel_id, String roomType, String stock, String beds, String tv, String minibar) {
-//        String query = "UPDATE rooms SET hotel_id=?, room_type=?, stock=?, beds=?, tv=?, minibar=?, WHERE id =?";
-//
-//        try {
-//            PreparedStatement pr = DBConnector.getInstance().prepareStatement(query);
-//            pr.setInt(1, hotel_id );
-//            pr.setString(2, roomType );
-//            pr.setString(3, stock );
-//            pr.setString(4, beds );
-//            pr.setString(5, tv );
-//            pr.setString(6, minibar );
-//            pr.setInt(7, id );
-//
-//            return pr.executeUpdate() != -1;
-//
-//        } catch (SQLException e) {
-//            System.out.println(e.getMessage());;
-//        }
-//        return true;
-//    }
-//
-//    //todo getFetch
-//    public static Price getFetch(int id){
-//        Room obj = null;
-//        String query = "SELECT * FROM rooms WHERE id = ?";
-//
-//        try {
-//            PreparedStatement pr = DBConnector.getInstance().prepareStatement(query);
-//            pr.setInt(1, id);
-//            ResultSet rs = pr.executeQuery();
-//            while (rs.next()){
-//                obj = new Room();
-//                obj.setId(rs.getInt("id"));
-//                obj.setId(rs.getInt("hotel_id"));
-//                obj.setRoomType(rs.getString("room_type"));
-//                obj.setStock(rs.getString("stock"));
-//                obj.setBeds(rs.getString("beds"));
-//                obj.setTv(rs.getString("tv"));
-//                obj.setMinibar(rs.getString("minibar"));
-//
-//            }
-//        } catch (SQLException e) {
-//            throw new RuntimeException(e);
-//        }
-//        return obj;
-//    }
+
+    public static Price getFetch(int id){
+        Price obj = null;
+        String query = "SELECT * FROM rooms WHERE id = ?";
+        try {
+            PreparedStatement pr = DBConnector.getInstance().prepareStatement(query);
+            pr.setInt(1, id);
+            ResultSet rs = pr.executeQuery();
+            while (rs.next()){
+                obj = new Price();
+                obj.setId(rs.getInt("id"));
+                obj.setHotel_id(rs.getInt("hotel_id"));
+                obj.setRoom_id(rs.getInt("room_id"));
+                obj.setSeason_id(rs.getInt("season_id"));
+                obj.setStartDate(rs.getString("start_date"));
+                obj.setEndDate(rs.getString("end_date"));
+                obj.setSeason(rs.getString("season"));
+                obj.setHostel_id(rs.getInt("hostel_id"));
+                obj.setHostelType(rs.getString("hostel_types"));
+                obj.setRoomType(rs.getString("room_type"));
+                obj.setAge(rs.getString("age"));
+                obj.setPrice(rs.getString("price"));
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return obj;
+    }
 }

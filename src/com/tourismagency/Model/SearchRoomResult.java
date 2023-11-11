@@ -13,7 +13,7 @@ public class SearchRoomResult {
 //    private String startDate;
 //    private String endDate;
     private String season;
-
+    private int room_id;
     private int hotel_id;
     private String hotelName;
     private String city;
@@ -36,13 +36,12 @@ public class SearchRoomResult {
     private Room room;
 
 
-    public SearchRoomResult(/*String startDate, String endDate,*/ String season, int hotel_id, String hotelName, String city, String region, String address, String email, String phone, String starRate, String facilityFeatures, String hostelType, String roomType, String stock, String beds, String tv, String minibar) {
+    public SearchRoomResult(String season, int hotel_id, int room_id, String hotelName, String city, String region, String address, String email, String phone,
+                            String starRate, String facilityFeatures, String hostelType, String roomType, String stock, String beds, String tv, String minibar) {
 
-//        this.startDate = startDate;
-//        this.endDate = endDate;
         this.season = season;
-
         this.hotel_id = hotel_id;
+        this.room_id = room_id;
         this.hotelName = hotelName;
         this.city = city;
         this.region = region;
@@ -52,8 +51,6 @@ public class SearchRoomResult {
         this.starRate = starRate;
         this.facilityFeatures = facilityFeatures;
         this.hostelType = hostelType;
-
-
         this.roomType = roomType;
         this.stock = stock;
         this.beds = beds;
@@ -61,14 +58,11 @@ public class SearchRoomResult {
         this.minibar = minibar;
 
         this.hotel = Hotel.getFetch(hotel_id);
-        this.room = Room.getFetch(room.getId());
+        this.room = Room.getFetch(room_id);
     }
 
     public SearchRoomResult() {
-
     }
-
-
 
     public int getHotel_id() {
         return hotel_id;
@@ -76,6 +70,14 @@ public class SearchRoomResult {
 
     public void setHotel_id(int hotel_id) {
         this.hotel_id = hotel_id;
+    }
+
+    public int getRoom_id() {
+        return room_id;
+    }
+
+    public void setRoom_id(int room_id) {
+        this.room_id = room_id;
     }
 
     public String getHotelName() {
@@ -206,22 +208,6 @@ public class SearchRoomResult {
         this.room = room;
     }
 
-//    public String getStartDate() {
-//        return startDate;
-//    }
-//
-//    public void setStartDate(String startDate) {
-//        this.startDate = startDate;
-//    }
-//
-//    public String getEndDate() {
-//        return endDate;
-//    }
-//
-//    public void setEndDate(String endDate) {
-//        this.endDate = endDate;
-//    }
-
     public String getSeason() {
         return season;
     }
@@ -231,22 +217,8 @@ public class SearchRoomResult {
     }
 
 
-
-    //    SELECT *
-//    FROM hotel_seasons
-//    INNER JOIN hotels
-//    ON hotel_seasons.hotel_id = hotels.id
-//
-//    INNER JOIN rooms
-//    ON hotels.id = rooms.hotel_id
-
-    //SELECT * FROM hotel_seasons WHERE CONVERT(DATETIME, start_date)<=CONVERT(DATE, '2024-04-10')
-
-
-    public static ArrayList<SearchRoomResult> getSearchRoomResult(String query) {
+    public static ArrayList<SearchRoomResult> getSearchRoomResult(String query) { // Veritabanindan SearchRoomResult objelerini getiren metot
         ArrayList<SearchRoomResult> searchRoomResultList = new ArrayList<>();
-//        String query = "SELECT * FROM hotels ";
-//        String query = "SELECT * FROM rooms ";
         SearchRoomResult obj;
         try {
             Statement st = DBConnector.getInstance().createStatement();
@@ -254,10 +226,9 @@ public class SearchRoomResult {
             while (rs.next()) {
                 obj = new SearchRoomResult();
 
-//                obj.setStartDate(rs.getString("start_date"));
-//                obj.setEndDate(rs.getString("end_date"));
                 obj.setSeason(rs.getString("season"));
                 obj.setHotel_id(rs.getInt("hotel_id"));
+                obj.setRoom_id(rs.getInt("id"));
                 obj.setHotelName(rs.getString("name"));
                 obj.setCity(rs.getString("city"));
                 obj.setRegion(rs.getString("region"));
@@ -280,9 +251,14 @@ public class SearchRoomResult {
         return searchRoomResultList;
     }
 
-    public static String searchRoomQuery(String city, String region, String startDate, String endDate) {
-        String query = "SELECT * FROM hotel_seasons INNER JOIN hotels ON hotel_seasons.hotel_id = hotels.id INNER JOIN rooms ON hotels.id = rooms.hotel_id";
-        query += "\nWHERE hotels.city LIKE '%{{city}}%'";
+    public static String searchRoomQuery(String city, String region, String startDate, String endDate) { // Otel arama sorgusu olusturan metot
+
+//        String query = "SELECT * FROM hotel_seasons INNER JOIN hotels ON hotel_seasons.hotel_id = hotels.id INNER JOIN rooms ON hotels.id = rooms.hotel_id";
+//        query += "\nWHERE hotels.city LIKE '%{{city}}%'";
+//        query = query.replace("{{city}}", city);
+
+        String query = "SELECT * FROM rooms INNER JOIN hotels ON rooms.hotel_id = hotels.id INNER JOIN hotel_seasons ON hotels.id = hotel_seasons.hotel_id";
+        query += "\nWHERE hotels.city LIKE '%{{city}}%'"; //Sehir filtresi LIKE kullanarak sehir kayitlarini getirir. {city} ifadesi, kullanicinin girdigi şehir adı ile değiştirilir.
         query = query.replace("{{city}}", city);
 
         query += " AND hotels.region LIKE '%{{region}}%'";
@@ -293,8 +269,9 @@ public class SearchRoomResult {
             query += "\n AND STR_TO_DATE(start_date,'%d/%m/%Y') <= STR_TO_DATE('{{startDate}}','%d/%m/%Y') AND STR_TO_DATE(end_date,'%d/%m/%Y') >= STR_TO_DATE('{{endDate}}','%d/%m/%Y')";
             query = query.replace("{{startDate}}", startDate);
             query = query.replace("{{endDate}}", endDate);
-        }
 
+            // STR_TO_DATE fonksiyonu kullanılarak tarih formatı uygun hale getirilir.
+        }
 
         return query;
     }

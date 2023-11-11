@@ -84,7 +84,6 @@ public class HotelSeason {
         ArrayList<HotelSeason> seasonList = new ArrayList<>();
         String query = "SELECT * FROM hotel_seasons ";
         HotelSeason obj;
-
         try {
             Statement st = DBConnector.getInstance().createStatement();
             ResultSet rs = st.executeQuery(query);
@@ -95,7 +94,6 @@ public class HotelSeason {
                 obj.setStartDate(rs.getString("start_date"));
                 obj.setEndDate(rs.getString("end_date"));
                 obj.setSeason(rs.getString("season"));
-
                 seasonList.add(obj);
             }
             st.close();
@@ -125,7 +123,6 @@ public class HotelSeason {
             }
             st.close();
             rs.close();
-
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -153,11 +150,6 @@ public class HotelSeason {
         try {
             PreparedStatement pr =DBConnector.getInstance().prepareStatement(query);
             pr.setInt(1 , id);
-            // TODO: 5.11.2023  bu kismi acinca null hatasi aliyor. kapatinca duzeliyor.
-//            ArrayList<HotelSeason> seasonList = HotelSeason.getList(id);
-//            for (HotelSeason season : seasonList) {
-//                HotelSeason.delete(season.getId());
-//            }
             return pr.executeUpdate() != -1;
         } catch (SQLException e) {
             e.printStackTrace();
@@ -168,7 +160,6 @@ public class HotelSeason {
     public static HotelSeason getFetch(int id){
         HotelSeason obj = null;
         String query = "SELECT * FROM hotel_seasons WHERE id = ?";
-
         try {
             PreparedStatement pr = DBConnector.getInstance().prepareStatement(query);
             pr.setInt(1, id);
@@ -180,7 +171,6 @@ public class HotelSeason {
                 obj.setStartDate(rs.getString("start_date"));
                 obj.setEndDate(rs.getString("end_date"));
                 obj.setSeason(rs.getString("season"));
-
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);
