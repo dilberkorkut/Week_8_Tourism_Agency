@@ -1,8 +1,10 @@
 # Tourism Agency
 
 
+Bu proje bir Java uygulamasidir. 
+Patika Turizm acentesinin islerini dijital ortamda yurutebilmesini saglamak uzere gelistirilmistir.
 
-Bu proje, Patika Turizm Acentesi'nin işlerini dijital ortamda yönetmesi için bir yazılım geliştirmeyi amaçlamaktadır. Acentenin çalışma mantığına göre otel yönetimi, dönem yönetimi, oda yönetimi, fiyatlandırma, oda arama ve rezervasyon işlemlerini içermektedir.
+Acentenin calisma mantigina gore otel yonetimi, donem yonetimi, oda yonetimi, fiyatlandirma, oda arama ve rezervasyon islemlerini icermektedir.
 
 ## Proje Tanımı
 
