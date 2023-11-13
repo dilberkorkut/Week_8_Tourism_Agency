@@ -64,7 +64,7 @@ public class ReservationGUI extends JFrame{
         SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
 
         add(wrapper);
-        setSize(900, 800);
+        setSize(700, 800);
         setLocation(Helper.screenCenterPoint("x", getSize()), Helper.screenCenterPoint("y", getSize()));
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setTitle(Config.PROJECT_TITLE);

@@ -140,6 +140,7 @@ public class Hotel {
                 obj.setFacilityFeatures(rs.getString("facility_features"));
                 obj.sethostelType(rs.getString("hostel_types"));
             }
+
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

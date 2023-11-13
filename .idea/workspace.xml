@@ -6,7 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="aeabb31b-0621-4f0b-bbf4-c21d47c8dd7a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tourism_agency_sql.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/sql_sorgulari.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/tourismagency/Model/Hotel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/tourismagency/Model/Hotel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/tourismagency/View/AgencyGUI.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/tourismagency/View/AgencyGUI.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/tourismagency/View/ReservationGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/tourismagency/View/ReservationGUI.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,6 +55,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/secreenshot" />
       <recent name="$PROJECT_DIR$/src" />
       <recent name="$PROJECT_DIR$/src/com/tourismagency" />
       <recent name="$PROJECT_DIR$" />
